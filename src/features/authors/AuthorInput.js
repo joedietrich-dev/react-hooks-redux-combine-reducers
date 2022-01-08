@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { v4 as uuid } from "uuid";
 import { useDispatch } from "react-redux";
-import { addAuthor } from "./booksSlice";
+import { addAuthor } from "./authorsSlice";
 
 function AuthorInput() {
   const [authorName, setAuthorName] = useState("");
@@ -21,13 +21,7 @@ function AuthorInput() {
   return (
     <form onSubmit={handleSubmit}>
       <p>
-        <input
-          type="text"
-          onChange={handleAuthorChange}
-          name="authorName"
-          value={authorName}
-          placeholder="author name"
-        />
+        <input type="text" onChange={handleAuthorChange} name="authorName" value={authorName} placeholder="author name" />
       </p>
       <input type="submit" />
     </form>
