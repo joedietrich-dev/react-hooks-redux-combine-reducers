@@ -1,14 +1,14 @@
 // Action Creators
-export const addBook = (book) => {
+export const addAuthor = (author) => {
   return {
-    type: "books/add",
-    payload: book,
+    type: "authors/add",
+    payload: author,
   };
 };
 
-export const removeBook = (id) => {
+export const removeAuthor = (id) => {
   return {
-    type: "books/remove",
+    type: "authors/remove",
     payload: id,
   };
 };
@@ -18,11 +18,11 @@ const initialState = [];
 
 export default function reducer(state = initialState, action) {
   switch (action.type) {
-    case "books/add":
+    case "authors/add":
       return [...state, action.payload];
 
-    case "books/remove":
-      return state.filter((book) => book.id !== action.payload);
+    case "authors/remove":
+      return state.filter((author) => author.id !== action.payload);
 
     default:
       return state;
